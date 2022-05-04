@@ -12,7 +12,6 @@ int main(){
     int buffer_size = w*h;
     float A = 0; //rotation angle X
     float B = 0; //rotation angle Y
-    //float C = 0; //rotation angle Z
     float bdir[3] = {0.0,1.0,0.0}; //brightness direction
     char* bchar = ".,-~:;=!*#$@";
 
@@ -25,9 +24,9 @@ int main(){
         float cy = cos(B);
         float sy = sin(B);
         float z_buffer[buffer_size];
-        char donut[buffer_size];
+        char bagel[buffer_size];
         std::memset(z_buffer, -R-r, buffer_size*sizeof(float));
-        std::memset(donut, ' ', buffer_size);
+        std::memset(bagel, ' ', buffer_size);
         for (float theta=0; theta<2*M_PI; theta+=0.05){
             for (float phi=0; phi<2*M_PI; phi+=0.05){
                 float cTheta = cos(theta);
@@ -50,14 +49,14 @@ int main(){
                     ny = ny/n_norm;
                     nz = nz/n_norm;
                     int bright = 12*(1 + nx*bdir[0] + ny*bdir[1] + nz*bdir[2])/2;
-                    donut[index] = bchar[bright];
+                    bagel[index] = bchar[bright];
                     z_buffer[index] = z;
                 }
             }
         }
         for (int i = 0; i<buffer_size; i++) {
             if (i%w == 0 && i!=0) { putchar('\n'); }
-            putchar(donut[i]);
+            putchar(bagel[i]);
         }
         printf("\x1b[2J\x1b[H");
     }
