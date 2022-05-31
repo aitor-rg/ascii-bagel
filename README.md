@@ -8,4 +8,4 @@ You can also find the code to render a möbius strip.
 
 ![mobius](https://user-images.githubusercontent.com/78908328/171273826-fea727b7-4c8a-4cfc-ac47-e5a173a9dcb4.gif)
 
-Have fun.
+Have fun!
